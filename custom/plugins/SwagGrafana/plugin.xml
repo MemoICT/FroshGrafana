@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">Grafana Connector</label>
+    <label lang="en">Grafana connector</label>
+
+    <version>1.0.0</version>
+    <compatibility minVersion="5.3.2"/>
+
+    <description lang="de">Shopware-Plugin, welches Daten für Grafana bereitstellt.</description>
+    <description lang="en">Shopware plugin that serves data for Grafana.</description>
+
+    <author>WebChimp - Kai Neuwerth</author>
+    <copyright>WebChimp - Kai Neuwerth</copyright>
+    <link>http://www.webchimp.de</link>
+
+    <changelog version="1.0.0">
+        <changes lang="de">Initiales Release</changes>
+        <changes lang="en">Initial release</changes>
+    </changelog>
+</plugin>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <label>Empaction-Einstellungen</label>
+    <elements>
+        <element scope="shop" required="true" type="text">
+            <name>accessToken</name>
+            <label>Token</label>
+            <description lang="de">
+                <![CDATA[
+                    Bitte geben Sie hier ein Access-Token ein, welches für die Autorisierung von Anfragen genutzt werden soll.<br>
+                    Empfohlen wird ein "CodeIgniter Encryption Key" Token von dieser Seite: <span style="color: red;">randomkeygen.com</span>
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    Please enter an access token here, which should be used for the authorization of requests.
+                    A "CodeIgniter Encryption Key" from this site is recommended: <span style="color: red;">randomkeygen.com</span>
+                ]]>
+            </description>
+        </element>
+    </elements>
+</config>
