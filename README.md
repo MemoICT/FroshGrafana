@@ -1,13 +1,12 @@
-# Grafana Shopware Plugin
+# Grafana Shopware Plugin (work in progress)
 
 Shopware plugin that serves data for Grafana.
-
-> This plugin requires at least Shopware 5.3.2.
 
 1. Download plugin.
 2. Upload plugin from `custom/plugins/` to your Shopware.
 3. Navigate to your Shopware backend and activate the plugin in the Plugin Manager.
 
-## Support
+## Configuring Grafana
 
-- Skype: kai_neuwerth
+1. Set your organizations timezone to UTC.
+2. Install the SimpleJson data source plugin in Grafana.

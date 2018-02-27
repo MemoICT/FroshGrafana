@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">Grafana Connector</label>
+    <label lang="en">Grafana connector</label>
+
+    <version>0.0.1</version>
+    <compatibility minVersion="5.3.2"/>
+
+    <description lang="de">
+        <![CDATA[Shopware-Plugin, welches Daten für Grafana bereitstellt.]]>
+    </description>
+    <description lang="en">
+        <![CDATA[Shopware plugin that serves data for Grafana.]]>
+    </description>
+
+    <license>MIT</license>
+    <author>Friends of Shopware</author>
+    <copyright>Friends of Shopware</copyright>
+    <link>https://friendsofshopware.github.io/</link>
+
+    <changelog version="1.0.0">
+        <changes lang="de">
+            <![CDATA[Initiales Release]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[Initial release]]>
+        </changes>
+    </changelog>
+</plugin>
