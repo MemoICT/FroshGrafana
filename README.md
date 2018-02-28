@@ -1,5 +1,7 @@
 # Grafana Shopware Plugin (work in progress)
 
+[![Build Status](https://travis-ci.org/FriendsOfShopware/FroshGrafana.svg?branch=develop)](https://travis-ci.org/FriendsOfShopware/FroshGrafana)
+
 Shopware plugin that serves data for Grafana.
 
 1. Download plugin.
