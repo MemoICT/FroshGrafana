@@ -10,5 +10,4 @@ fi
 
 # Build new release
 mkdir -p FroshGrafana
-git archive ${commit} | tar -x -C FroshGrafana
-zip -r FroshGrafana-${commit}.zip FroshGrafana
+git archive --format zip --output FroshGrafana/FroshGrafana-${commit}.zip
