@@ -1,18 +1,14 @@
 language: php
-
 php:
-    - 7.1
-
+- 7.1
 sudo: false
-
 script:
-    - "./build.sh"
-
+- "./build.sh"
 deploy:
-    provider: releases
-    api_key:
-        secure: U2OcY4bAhmo+eoRJ6UJE2uRkPyx+FVpnqCYO9JvJKrNiEgrxttQLyUszz/wVjJ9or4doUyWQ2B2qsmzZHJZDT8nxG9MIbEy/F4ppJdOE0+pbRj3YXDlJp/BsrctyIq8mDMD93h43fBnl06Wyyx4AQDmrvZr0u+kqviVEh7nRgVar0UiUc7pWNCxUAebIvDE9mbBdktdHnfjCQ7Wq0Y/N1CMLeBw9W8LZiurnk5e629WWJcVkfiVaEQGCCxLVBcjpyjXJXUnoewcMPzLvEBK0HdCyWcy8cPiDKvQz/ll5Aut5x8GZlkLc2PoPOJNtgC93CavZq1N0wvlVr4a1qCw8utshrjD6m9d04jVFjfgtpkJrloMTPOxrOR0VbPf8PvzhRQUYHHSpB4wmZEBR0otnNRhxj+eUD46+NLQpSutIoQ78gKHeuT6GdS2REh6PZ/JphMubmTAb502ONfCOtiC6GOz2smAoeN5c9/eCJag9yYdtU/2OqJ3a6dJM/isua5G7Edq/KBy4pXXk8+9jK21kQ6VjAENHn5D1Yh6edf0EDWIdZRcdppyk3OyGqoLhqCF7yoRpz36cBpqTBk5XLmNwgfsaPvaGTLhBhwbCx7S0dIzVkYSMABK2ftQi+2p1nRPe71dIe46/w0etvdFXwjXiuCYE+DPoIN2NE9mjnp+6PzY=
-    file: FroshGrafana/FroshGrafana-*.zip
-    file_glob: true
-    on:
-        tags: true
+  provider: releases
+  api_key:
+    secure: YJ7QkCWX8ijZJPLcbIrZxpOrNUYGK9mvnW+idzxLkUuZrOdONDCV9EgDkfuR5ekzJ6gx7TmA8kEirXpd7MiP8ld0CjZB8K2HLP72ii5XbHDL50Ul/eoqo7XGhUd7eTDBjOWVJj0VnaQ/1JEg+qapHTTVUxo16G25sq5JAHxEKH3XOQyZWZo8n6zmp771Pm0bu+X9zNoMRy1kldUjbh6IPJ4OoNEfrTCzVlzkRzHXDP+daXdnWQne02TLfWquOamM4cGVGYTfMfLq6nyNN/m4V1vxXJ7E1fK7aagc413oMHH00s+Vm+JJYBeRBVSLU8WpvL1+byZgr55VwIZVEzh9KgptWfcWbWYmg9EO1DPBdk85PyA69rnw6b1ckMO8TtTLNNVRGBRZRyIorbvrQA0u9327t4fzsacBnoVcK8SdG+b/TYTnxNnBEhOZ/FvUrNWVeBjcPLhCA3xVNCFwMZedz+XwEq43aCJRVvl0sNyOtbHDG8nXs7Z1MSb//l36h5N9TBSpBGoL+xX8Dyg5Sb/+K8H69BTfedO8WmOq7sDLUB9aGWG4S6wFOgylgnUFAjUzMT9UfFXraa8bvdVfR8CZfB3EmXmiV/+SGIOzrQOCwOH7Kv+gYgTEXyEsQhtFDpp9QN+rk1R2hcwNqWB7/NtoQdU4ieG+yZ7MS+hsuQ7vlXY=
+  file: FroshGrafana/FroshGrafana-*.zip
+  file_glob: true
+  on:
+    tags: true
