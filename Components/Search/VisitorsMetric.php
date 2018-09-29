@@ -4,7 +4,7 @@ namespace FroshGrafana\Components\Search;
 
 use FroshGrafana\Components\Dbal\SessionGateway;
 
-class VisitorsMetric extends Metric
+class VisitorsMetric extends Metric implements MetricInterface
 {
     /** @var SessionGateway $statisticsGateway */
     private $statisticsGateway;
@@ -20,9 +20,7 @@ class VisitorsMetric extends Metric
     }
 
     /**
-     * Returns the id of this metric which is used as target in query requests.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getId(): string
     {
@@ -30,9 +28,15 @@ class VisitorsMetric extends Metric
     }
 
     /**
-     * Returns the name of this metric which is shown in the 'find metric' options on the query tab in panels.
-     *
-     * @return string
+     * {@inheritdoc}
+     */
+    public function getStateSnapshotColumnName(): string
+    {
+        return 'visitors';
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getName(): string
     {
@@ -40,7 +44,7 @@ class VisitorsMetric extends Metric
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
     public function getDataPoints(): array
     {

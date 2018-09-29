@@ -4,7 +4,7 @@ namespace FroshGrafana\Components\Search;
 
 use FroshGrafana\Components\Dbal\CustomersGateway;
 
-class CustomerRegistrationsMetric extends Metric
+class CustomerRegistrationsMetric extends Metric implements MetricInterface
 {
     /** @var CustomersGateway $customersGateway */
     private $customersGateway;
@@ -20,9 +20,7 @@ class CustomerRegistrationsMetric extends Metric
     }
 
     /**
-     * Returns the id of this metric which is used as target in query requests.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getId(): string
     {
@@ -30,9 +28,15 @@ class CustomerRegistrationsMetric extends Metric
     }
 
     /**
-     * Returns the name of this metric which is shown in the 'find metric' options on the query tab in panels.
-     *
-     * @return string
+     * {@inheritdoc}
+     */
+    public function getStateSnapshotColumnName(): string
+    {
+        return 'customer_registrations';
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getName(): string
     {
@@ -40,7 +44,7 @@ class CustomerRegistrationsMetric extends Metric
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
     public function getDataPoints(): array
     {

@@ -14,6 +14,13 @@ interface MetricInterface
     public function getId(): string;
 
     /**
+     * Returns the name of the metric's column name in s_plugin_frosh_grafana_state_snapshots.
+     *
+     * @return string
+     */
+    public function getStateSnapshotColumnName(): string;
+
+    /**
      * Returns the name of this metric which is shown in the 'find metric' options on the query tab in panels.
      *
      * @return string

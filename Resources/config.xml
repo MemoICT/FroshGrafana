@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
-    <label>Empaction-Einstellungen</label>
+    <label>Grafana-Einstellungen</label>
     <elements>
         <element scope="shop" required="true" type="text">
             <name>accessToken</name>

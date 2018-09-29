@@ -4,7 +4,7 @@ namespace FroshGrafana\Components\Search;
 
 use FroshGrafana\Components\Grafana\QueryRequest;
 
-class Metric implements MetricInterface
+class Metric
 {
     /** @var QueryRequest $request */
     protected $request;

@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="frosh_grafana.components.dbal.customers_gateway"
+                 class="FroshGrafana\Components\Dbal\CustomersGateway">
+            <argument type="service" id="dbal_connection"/>
+        </service>
+        <service id="frosh_grafana.components.dbal.orders_gateway"
+                 class="FroshGrafana\Components\Dbal\OrdersGateway">
+            <argument type="service" id="dbal_connection"/>
+        </service>
+        <service id="frosh_grafana.components.dbal.session_gateway"
+                 class="FroshGrafana\Components\Dbal\SessionGateway">
+            <argument type="service" id="dbal_connection"/>
+        </service>
+    </services>
+</container>

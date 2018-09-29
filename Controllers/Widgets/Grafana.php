@@ -22,7 +22,8 @@ class Shopware_Controllers_Widgets_Grafana extends Enlight_Controller_Action imp
      */
     public function preDispatch()
     {
-        $this->container->get('front')->Plugins()->ViewRenderer()->setNoRender();
+        $this->Front()->Plugins()->ViewRenderer()->setNoRender();
+        //$this->Front()->Plugins()->Json()->setRenderer();
         $this->Response()->setHeader('Content-Type', 'application/json; charset=utf-8');
 
         /* @ToDo: Implement different authentication method. */
@@ -51,7 +52,6 @@ class Shopware_Controllers_Widgets_Grafana extends Enlight_Controller_Action imp
                 [
                     ['text' => 'Anz. Bestellungen', 'value' => 'orders_count'],
                     ['text' => 'Kunden-Registrierungen', 'value' => 'customer_registrations'],
-                    ['text' => 'Test', 'value' => 'test'],
                     ['text' => 'Umsatz', 'value' => 'turnover'],
                     ['text' => 'Besucher', 'value' => 'visitors'],
                 ]
@@ -61,7 +61,8 @@ class Shopware_Controllers_Widgets_Grafana extends Enlight_Controller_Action imp
 
     /**
      * /query should return metrics based on input.
-     * @throws Exception
+     *
+     * @throws \Exception
      */
     public function queryAction()
     {
@@ -73,7 +74,7 @@ class Shopware_Controllers_Widgets_Grafana extends Enlight_Controller_Action imp
             foreach ($queryRequest->getTargets() as $target) {
                 /** @var \FroshGrafana\Components\Search\MetricInterface $metric */
                 $metric = $this->container->get(
-                    sprintf('frosh_grafana.components.search.%s_metric', $target->target)
+                    \sprintf('frosh_grafana.components.search.%s_metric', $target->target)
                 );
 
                 $metric->setRequest($queryRequest);
@@ -85,7 +86,6 @@ class Shopware_Controllers_Widgets_Grafana extends Enlight_Controller_Action imp
                     ]
                 );
             }
-
         } catch (\Exception $exception) {
             /** @var \Psr\Log\LoggerInterface $log */
             $this->container->get('corelogger')->critical(

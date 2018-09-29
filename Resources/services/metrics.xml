@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="frosh_grafana.components.search.orders_count_metric"
+                 class="FroshGrafana\Components\Search\OrdersCountMetric">
+            <argument type="service" id="frosh_grafana.components.dbal.orders_gateway"/>
+            <tag name="frosh_grafana.metric"/>
+        </service>
+        <service id="frosh_grafana.components.search.customer_registrations_metric"
+                 class="FroshGrafana\Components\Search\CustomerRegistrationsMetric">
+            <argument type="service" id="frosh_grafana.components.dbal.customers_gateway"/>
+            <tag name="frosh_grafana.metric"/>
+        </service>
+        <service id="frosh_grafana.components.search.turnover_metric"
+                 class="FroshGrafana\Components\Search\TurnoverMetric">
+            <argument type="service" id="frosh_grafana.components.dbal.orders_gateway"/>
+            <tag name="frosh_grafana.metric"/>
+        </service>
+        <service id="frosh_grafana.components.search.visitors_metric"
+                 class="FroshGrafana\Components\Search\VisitorsMetric">
+            <argument type="service" id="frosh_grafana.components.dbal.session_gateway"/>
+            <tag name="frosh_grafana.metric"/>
+        </service>
+    </services>
+</container>

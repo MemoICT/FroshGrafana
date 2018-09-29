@@ -2,51 +2,9 @@
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
-    <services>
-        <!-- Services -->
-        <service id="frosh_grafana.components.grafana.query_request"
-                 class="FroshGrafana\Components\Grafana\QueryRequest"/>
-        <service id="frosh_grafana.components.grafana.query_response"
-                 class="FroshGrafana\Components\Grafana\QueryResponse"/>
-
-        <!-- Gateways -->
-        <service id="frosh_grafana.components.dbal.customers_gateway"
-                 class="FroshGrafana\Components\Dbal\CustomersGateway">
-            <argument type="service" id="dbal_connection"/>
-        </service>
-        <service id="frosh_grafana.components.dbal.orders_gateway"
-                 class="FroshGrafana\Components\Dbal\OrdersGateway">
-            <argument type="service" id="dbal_connection"/>
-        </service>
-        <service id="frosh_grafana.components.dbal.session_gateway"
-                 class="FroshGrafana\Components\Dbal\SessionGateway">
-            <argument type="service" id="dbal_connection"/>
-        </service>
-
-        <!-- Metrics -->
-        <service id="frosh_grafana.components.search.orders_count_metric"
-                 class="FroshGrafana\Components\Search\OrdersCountMetric">
-            <argument type="service" id="frosh_grafana.components.dbal.orders_gateway"/>
-            <tag name="frosh_grafana.metric"/>
-        </service>
-        <service id="frosh_grafana.components.search.customer_registrations_metric"
-                 class="FroshGrafana\Components\Search\CustomerRegistrationsMetric">
-            <argument type="service" id="frosh_grafana.components.dbal.customers_gateway"/>
-            <tag name="frosh_grafana.metric"/>
-        </service>
-        <service id="frosh_grafana.components.search.test_metric"
-                 class="FroshGrafana\Components\Search\TestMetric">
-            <tag name="frosh_grafana.metric"/>
-        </service>
-        <service id="frosh_grafana.components.search.turnover_metric"
-                 class="FroshGrafana\Components\Search\TurnoverMetric">
-            <argument type="service" id="frosh_grafana.components.dbal.orders_gateway"/>
-            <tag name="frosh_grafana.metric"/>
-        </service>
-        <service id="frosh_grafana.components.search.visitors_metric"
-                 class="FroshGrafana\Components\Search\VisitorsMetric">
-            <argument type="service" id="frosh_grafana.components.dbal.session_gateway"/>
-            <tag name="frosh_grafana.metric"/>
-        </service>
-    </services>
+    <imports>
+        <import resource="services/gateways.xml"/>
+        <import resource="services/metrics.xml"/>
+        <import resource="services/services.xml"/>
+    </imports>
 </container>

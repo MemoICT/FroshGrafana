@@ -4,13 +4,14 @@ namespace FroshGrafana\Components\Search;
 
 use FroshGrafana\Components\Dbal\OrdersGateway;
 
-class OrdersCountMetric extends Metric
+class OrdersCountMetric extends Metric implements MetricInterface
 {
     /** @var OrdersGateway $ordersGateway */
     private $ordersGateway;
 
     /**
      * OrdersCountMetric constructor.
+     *
      * @param OrdersGateway $ordersGateway
      */
     public function __construct(OrdersGateway $ordersGateway)
@@ -19,9 +20,7 @@ class OrdersCountMetric extends Metric
     }
 
     /**
-     * Returns the id of this metric which is used as target in query requests.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getId(): string
     {
@@ -29,9 +28,15 @@ class OrdersCountMetric extends Metric
     }
 
     /**
-     * Returns the name of this metric which is shown in the 'find metric' options on the query tab in panels.
-     *
-     * @return string
+     * {@inheritdoc}
+     */
+    public function getStateSnapshotColumnName(): string
+    {
+        return 'orders_count';
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getName(): string
     {
@@ -39,7 +44,7 @@ class OrdersCountMetric extends Metric
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
     public function getDataPoints(): array
     {

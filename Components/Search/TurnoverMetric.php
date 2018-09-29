@@ -4,13 +4,14 @@ namespace FroshGrafana\Components\Search;
 
 use FroshGrafana\Components\Dbal\OrdersGateway;
 
-class TurnoverMetric extends Metric
+class TurnoverMetric extends Metric implements MetricInterface
 {
     /** @var OrdersGateway $ordersGateway */
     private $ordersGateway;
 
     /**
      * TurnoverMetric constructor.
+     *
      * @param OrdersGateway $ordersGateway
      */
     public function __construct(OrdersGateway $ordersGateway)
@@ -19,19 +20,23 @@ class TurnoverMetric extends Metric
     }
 
     /**
-     * Returns the id of this metric which is used as target in query requests.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getId(): string
     {
-        return 'turnover';
+        return 'orders_turnover';
     }
 
     /**
-     * Returns the name of this metric which is shown in the 'find metric' options on the query tab in panels.
-     *
-     * @return string
+     * {@inheritdoc}
+     */
+    public function getStateSnapshotColumnName(): string
+    {
+        return 'orders_turnover';
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getName(): string
     {
@@ -39,7 +44,7 @@ class TurnoverMetric extends Metric
     }
 
     /**
-     * @return array
+     * {@inheritdoc}
      */
     public function getDataPoints(): array
     {
