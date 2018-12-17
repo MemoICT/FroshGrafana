@@ -94,7 +94,9 @@ class OrdersGateway
                     $query->expr()->gte('ordertime', ':fromDate'),
                     $query->expr()->lte('ordertime', ':toDate')
                 )
-            )->groupBy('UNIX_TIMESTAMP(ordertime) DIV :interval')
+            )
+            ->andWhere('ordernumber != 0')
+            ->groupBy('UNIX_TIMESTAMP(ordertime) DIV :interval')
             ->setParameters(
                 [
                     'fromDate' => $fromDate->format('Y-m-d H:i:s'),
